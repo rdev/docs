@@ -8,7 +8,7 @@ You can access this documentation online at https://zeit.co/docs .
 
 Download the copy of this repostory. 
 sss111
-s
+sddd
 ~~~sh
 git clone https://github.com/zeit/docs.git
 ~~~
