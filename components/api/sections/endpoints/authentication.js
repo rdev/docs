@@ -18,9 +18,8 @@ import Request from '../../request'
 function Authentication() {
   return (
     <Section
-      contents={
-        // prettier-ignore
-        [
+      contents={// prettier-ignore
+      [
   [
     markdown(components)`
 ### Request a login
@@ -92,9 +91,9 @@ ${<Code syntax="json">{`{
   ],
   [
     markdown(components)`
-${<Endpoint method="GET" url="/now/registration/verify?email&token" />}
+${<Endpoint method="GET" url="/now/registration/verify?email&token&t" />}
 
-Verify the user accepted the login request and get a authentication token. The user email address and the token received after ${<InternalLink href="/api#endpoints/authentication/request-a-login">requesting the login</InternalLink>} must be added to the URL as a query string with the names ${<InlineCode>email</InlineCode>} and ${<InlineCode>token</InlineCode>}.
+Verify the user accepted the login request and get a authentication token. The user email address, the token received after ${<InternalLink href="/api#endpoints/authentication/request-a-login">requesting the login</InternalLink>} and a current timestamp in milliseconds must be added to the URL as a query string with the names ${<InlineCode>email</InlineCode>}, ${<InlineCode>token</InlineCode>} and ${<InlineCode>t</InlineCode>}.
 
 #### Output
 ${<OutputTable>
@@ -109,7 +108,7 @@ ${<OutputTable>
 Example request:
 
 ${<Request
-  url="https://api.zeit.co/now/registration/verify?email=user@mail.com&token=T1dmvPu36nmyYisXAs7IRzcR"  
+  url="https://api.zeit.co/now/registration/verify?email=user@mail.com&token=T1dmvPu36nmyYisXAs7IRzcR&t=1529600160083"  
 />}
 
 Example response:
@@ -119,8 +118,7 @@ ${<Code syntax="json">{`{
 }`}</Code>}
     `
   ]
-]
-      }
+]}
     />
   )
 }
